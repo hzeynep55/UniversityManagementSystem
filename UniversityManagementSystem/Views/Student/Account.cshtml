@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+
+<h2>Account</h2>
+
+<form class="form-group" style="width:400px">
+    <div>
+        <label class="form-label">Ad</label>
+        <input type="text" readonly class="form-control" value="@ViewBag.name" />
+    </div>
+    <div>
+        <label class="form-label">Soyad</label>
+        <input type="text" readonly class="form-control" value="@ViewBag.lastname" />
+    </div>
+    <div>
+        <label class="form-label">Kullanıcı Adı</label>
+        <input type="text" readonly class="form-control" value="@ViewBag.username" />
+    </div>
+    <div>
+        <label class="form-label">Email</label>
+        <input type="text" readonly class="form-control" value="@ViewBag.email" />
+    </div>
+    <div>
+        <label class="form-label">Doğum Tarihi</label>
+        <input type="text" readonly class="form-control" value="@ViewBag.birthdate.ToShortDateString()" />
+    </div>
+
+</form>

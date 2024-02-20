@@ -1,0 +1,20 @@
+﻿body {
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.frm{
+    width:600px;
+    height:auto;
+}
+
+input{
+    margin-bottom:5px;
+}
+
+.div1{
+    margin-top:5px;
+}

@@ -1,0 +1,29 @@
+﻿@using UniversityManagementSystem.Models.Entity
+
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+
+<h2 style="margin-top:40px; margin-bottom:40px">Üniversite Bölüm Dersleri</h2>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" href="/Admin/AddCourse">Ders Ekle</a>
+    </div>
+
+    <div class="col">
+        <div class="dropdown">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Bölüm Dersleri Listele
+            </a>
+
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Admin/ListCourse1">Bilgisayar Programcılığı</a></li>
+                <li><a class="dropdown-item" href="/Admin/ListCourse2">Bilişim Güvenliği Teknolojisi</a></li>
+                <li><a class="dropdown-item" href="/Admin/ListCourse">Tüm Dersler</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

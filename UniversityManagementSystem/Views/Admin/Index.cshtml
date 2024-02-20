@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+
+
+    <div class="row" style="margin-top:200px; float:left" >
+        <div class="col" >
+            
+                <button onclick="student()"style="background-color: #0e3b43; width:350px; height: 200px; border-radius: 4px; border: none; font-family: Century Gothic; font-size: 30px; color: white; float:left ">
+                Öğrenci İşlemleri</button>
+              
+            
+          
+        </div>
+        <div class="col"  >
+           
+                <button onclick="notes()"style="background-color: #357266; width: 350px; height: 200px; border-radius: 4px; border: none; font-family: Century Gothic; font-size: 30px; color: white ">
+                    Not İşlemleri
+                </button>
+            </div>
+     
+        <div class="col"  >
+            
+               
+                    <button onclick="course()" style="background-color: #A3BBAD; width: 350px; height: 200px; border-radius: 4px; border: none; font-family: Century Gothic; font-size: 30px; color: white; float: right">
+                        Ders İşlemleri
+                    </button>
+            
+
+    </div>
+    </div>
+<script>
+    function course() {
+        window.location.href = '/Admin/Courses';
+    }
+
+    function student() {
+        window.location.href = '/Student/Index';
+    }
+    
+</script>

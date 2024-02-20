@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "ListCourse";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+
+<h2>ListCourse</h2>
+
+@using UniversityManagementSystem.Models.Entity;
+@{
+    ViewBag.Title = "Bilgisayar Programcılığı";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+@model List<Courses>
+
+<link href="~/CSS/ListCourse.css" rel="stylesheet" type="text/css" />
+
+<h2>Dersleri</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ders Id</th>
+            <th>Ders Adı</th>
+            <th>Ders Kredisi</th>
+            <th>Bölüm</th>
+            <th>Dönem</th>
+            <th>Sınıf</th>
+            <th>Yarıyıl</th>
+            <th>Eğitmen</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.c_id</td>
+                <td>@item.c_name</td>
+                <td>@item.c_credit</td>
+                <td>@item.Department.d_name</td>
+                <td>@item.c_semester_season</td>
+                <td>@item.c_level</td>
+                <td>@item.session</td>
+                <td>@($"{@item.Instructors.i_name} {" "} {@item.Instructors.i_lastname}")</td>
+                <td><a href="@Url.Action("GetUpdate", "Admin", new { c_id = item.c_id })" class="btn btn-success">Güncelle</a></td>
+                <td><a href="@Url.Action("Delete", "Admin", new { c_id = item.c_id })" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

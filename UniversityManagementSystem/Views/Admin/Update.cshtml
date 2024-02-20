@@ -1,0 +1,59 @@
+﻿@using UniversityManagementSystem.Models.Entity;
+@{
+    ViewBag.Title = "Ders Güncelle";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+
+@model UniversityManagementSystem.Models.Entity.Courses
+
+<link href="~/CSS/UpdateCourse.css" rel="stylesheet" type="text/css" />
+<h2>Ders Güncelle</h2>
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.c_id)
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Ders Adı</label>
+            <input type="text" class="form-control" name="c_name" value="@Model.c_name" />
+        </div>
+        <div class="col">
+            <label class="form-label">Ders Kredisi</label>
+            <input type="text" class="form-control" name="c_credit" value="@Model.c_credit" />
+        </div>
+        <div class="col">
+            <label class="form-label">Departman Id</label>
+            <input type="text" class="form-control" name="dep_id" value="@Model.dep_id" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Dönem</label>
+            <input type="text" class="form-control" name="c_semester_season" value="@Model.c_semester_season" />
+        </div>
+        <div class="col">
+            <label class="form-label">Sınıf</label>
+            <input type="text" class="form-control" name="c_level" value="@Model.c_level" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Yarıyıl</label>
+            <input type="text" class="form-control" name="session" value="@Model.session" />
+        </div>
+        <div class="col">
+            <label class="form-label">Eğitmen Id</label>
+            <input type="text" class="form-control" name="inst_id" value="@Model.inst_id" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="div1 col">
+            <button class="btn btn-primary">Güncelle</button>
+        </div>
+        <div class="col">
+            <a href="/Admin/Courses" class="btn btn-primary">Ders Sayfası</a>
+        </div>
+    </div>
+}
+
