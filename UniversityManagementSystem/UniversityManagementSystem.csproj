@@ -259,6 +259,7 @@
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Student\Account.cshtml" />
     <Content Include="Views\Admin\ListCourse.cshtml" />
+    <Content Include="Views\Student\StudentListNotes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

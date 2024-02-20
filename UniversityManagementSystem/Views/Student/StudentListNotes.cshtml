@@ -1,0 +1,35 @@
+﻿@using UniversityManagementSystem.Models.Entity
+@{
+    ViewBag.Title = "StudentListNotes";
+    Layout = "~/Views/Shared/_LoginPartialView.cshtml";
+}
+@model List<StudentNotes>
+
+<h2>StudentListNotes</h2>
+
+<table class="form-group table">
+    <thead>
+        <tr>
+            <th>Ders Adı</th>
+            <th>Vize</th>
+            <th>Final</th>
+            <th>Ortalama</th>
+            <th>Harf Notu</th>
+            <th>Durum</th>
+    
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var note in Model)
+            {
+                <tr>
+                    <td>@note.Courses.c_name</td>
+                    <td>@note.n_midterm</td>
+                    <td>@note.n_final</td>
+                    <td>@note.n_avarage</td>
+                    <td>@note.n_status</td>
+                </tr>
+            }
+    </tbody>
+</table>

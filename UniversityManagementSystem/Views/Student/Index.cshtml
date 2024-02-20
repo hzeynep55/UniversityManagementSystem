@@ -8,7 +8,7 @@
 
 <a href="/Student/Account?name=@ViewBag.name&lastname=@ViewBag.lastname&username=@ViewBag.username&email=@ViewBag.email&birthdate=@ViewBag.birthdate" class="btn btn-primary">Öğrenci Bilgileri</a>
 
-<a href="/Student/Notes" class="btn btn-primary">Sınav Notları</a>
+<a href="@Url.Action("Note", "Student", new { s_id = ViewBag.Student.student_id })"  class="btn btn-primary">Sınav Notları</a>
 
 
 

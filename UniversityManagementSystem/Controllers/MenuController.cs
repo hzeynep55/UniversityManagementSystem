@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,12 +22,19 @@ namespace UniversityManagementSystem.Controllers
         [HttpPost]
         public ActionResult Index(string username,string password)
         {
-            var student=db.Students.SingleOrDefault(s=>s.s_username == username && s.s_password==password);
+            
+            Students student = db.Students
+            .Include(s => s.StudentNotes.Select(sn => sn.Courses))
+            .SingleOrDefault(s => s.s_username == username && s.s_password == password);
+            //var student=db.Students.SingleOrDefault(s=>s.s_username == username && s.s_password==password);
             var admin=db.Admin.SingleOrDefault(a=>a.a_username==username && a.a_password==password);
             if(student!=null)
             {
+                ViewBag.Student = student;
+                ViewBag.Note = student.StudentNotes.ToList();
                 return RedirectToAction("Index", "Student", new
                 {
+                    s_id=student.student_id,
                     name = student.s_name,
                     lastname = student.s_lastname,
                     username = student.s_username,

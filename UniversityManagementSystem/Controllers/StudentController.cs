@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,18 @@ namespace UniversityManagementSystem.Controllers
             ViewBag.birthdate = birthdate.HasValue ? birthdate.Value.Date : DateTime.Now.Date;
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult StudentListNotes(int s_id, string name, string lastname)
+        {
+            ViewBag.name = name;
+            ViewBag.lastname = lastname;
+            var notes = db.StudentNotes
+            .Include(sn => sn.Courses)
+            .Where(sn => sn.student_id == s_id)
+            .ToList();
+            return View(notes);
         }
     }
 }
